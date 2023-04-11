@@ -4,12 +4,13 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		//Read input from keyboard
-		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-		System.out.print("Enter age: ");
+//		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+//		System.out.print("Enter age: ");
+//
+//		int num = myObj.nextInt();  // Read user input
+//		System.out.println("Factorial of " + num + " is " + fact(num));  // Output user input
 
-		int num = myObj.nextInt();  // Read user input
-		System.out.println("Factorial of " + num + " is " + fact(num));  // Output user input
-
+		int num = 6;
 		//Area calculation
 		double area = area("circle", 5, 7);
 		if (area != 0) {
@@ -48,6 +49,9 @@ public class Main {
 		System.out.println("circle - " +  area(4));
 		System.out.println("trinagle - " +  area(2, 1, 3));
 		System.out.println("rectangle - " + area(4, 5));
+
+		int[] input_array2 = {1, 1, 2, -5, 0, 9, -1, 65, 10};
+		System.out.println("Two positive numbers: " + two_positive_numbers(input_array2));
 	}
 
 	public static int fact(int n) {
@@ -212,11 +216,14 @@ public class Main {
 	}
 
 	//find two positive numbers
-	public static void two_positive_numbers(int[] input_arr){
+	public static int two_positive_numbers(int[] input_arr) {
 		int count = 0;
-		for (int i = 0; i < input_arr.length; i++) {
-
+		for (int i = 1; i < input_arr.length; i++) {
+			if (input_arr[i] > 0 && input_arr[i-1] > 0) {
+				count++;
+			}
 		}
+		return count;
 	}
 
 	//test changes

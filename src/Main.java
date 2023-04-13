@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.zip.ZipFile;
 
 public class Main {
 	public static void main(String[] args) {
@@ -50,8 +51,12 @@ public class Main {
 		System.out.println("trinagle - " +  area(2, 1, 3));
 		System.out.println("rectangle - " + area(4, 5));
 
-		int[] input_array2 = {1, 1, 2, -5, 0, 9, -1, 65, 10};
+		int[] input_array2 = {4, 1, 1, 2, -5, 0, 9, -1, 65, -10};
+		int[] input_array3 = {-4, -5};
 		System.out.println("Two positive numbers: " + two_positive_numbers(input_array2));
+		count_and_product(input_array3);
+
+		task003(input_array2);
 	}
 
 	public static int fact(int n) {
@@ -227,4 +232,37 @@ public class Main {
 	}
 
 	//test changes
+	public static void count_and_product(int[] input_arr){
+		int count = 0;
+		int product = 1;
+		for (int i = 0; i < input_arr.length; i++) {
+			if (input_arr[i] > 0) {
+				count = count + input_arr[i];
+			}
+			if (input_arr[i] % 2 == 0 && input_arr[i] > 0) {
+				product = product * input_arr[i];
+			}
+		}
+		System.out.println("Count - " + count);
+		System.out.println("Product - " + product);
+	}
+
+	//task 003
+	public static void task003(int[] input_arr) {
+		boolean flag = false;
+		for (int i = 0; i < input_arr.length; i++) {
+			if (input_arr[i] < -2) {
+				flag = true;
+				break;
+			}
+		}
+		for (int i = 0; i < input_arr.length; i++) {
+			if (input_arr[i] < 0) {
+				input_arr[i] = input_arr[i] * input_arr[i];
+			}
+		}
+		for (int i = 0; i < input_arr.length; i++) {
+			System.out.println("input_arr[" + i + "] = " + input_arr[i]);
+		}
+	}
 }

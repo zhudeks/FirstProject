@@ -53,10 +53,12 @@ public class Main {
 
 		int[] input_array2 = {4, 1, 1, 2, -5, 0, 9, -1, 65, -10};
 		int[] input_array3 = {-4, -5};
+		int[] input_array4 = {4, 1, 1, 2, 9, 0, -5};
 		System.out.println("Two positive numbers: " + two_positive_numbers(input_array2));
 		count_and_product(input_array3);
 
 		task003(input_array2);
+		task004(input_array4);
 	}
 
 	public static int fact(int n) {
@@ -264,5 +266,25 @@ public class Main {
 		for (int i = 0; i < input_arr.length; i++) {
 			System.out.println("input_arr[" + i + "] = " + input_arr[i]);
 		}
+	}
+
+	public static void task004(int[] input_arr){
+		int count_even = 0;
+		int count_odd = 0;
+		for (int i = 0; i < input_arr.length; i++) {
+			if (input_arr[i] > 0 && input_arr[i] % 2 == 0) {
+				count_even = count_even + input_arr[i] * input_arr[i];
+			} else if (input_arr[i] > 0 && input_arr[i] % 2 == 1) {
+				count_odd = count_odd + input_arr[i] * input_arr[i];
+			}
+		}
+		System.out.println("Zuyg - " + count_even);
+		System.out.println("Kent - " + count_odd);
+	}
+
+	public static void task005(double[] temp){
+		double min;
+		double max;
+		double median;
 	}
 }

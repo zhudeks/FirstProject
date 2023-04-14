@@ -48,10 +48,14 @@ public class Main {
 		System.out.println("triangle - " +  tasks.area(2, 1, 3));
 		System.out.println("rectangle - " + tasks.area(4, 5));
 
-		int[] input_array2 = {4, 1, 1, 2, -5, 0, 9, 2, -1, 65, -10, -5, -1, 12, 3, -2};
+		int[] input_array2 = {-1, 1, 0, 2, -5, 0, 9, 2, -1, 65, -10, -5, -1, 12, 3, -2};
 		int[] input_array3 = {-4, -5};
-		int[] input_array4 = {3, -2, -1, 4, 0, 0, 2, 1, 1, 2, 9, 0, 7, 2};
+		int[] input_array4 = {3, -2, -1, 4, 0, 0, 2, 1, 1, 2, 9, 0, 7, 2, -36, 4};
 		double[] input_array5 = {-2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		int[] input_array6 = {-3, -2, 17, 2, 36, 4, 5, 0};
+		char[] input_array7 = {'l','+', 'o', ';', 'K', '7', 'a', 'f', '/', 'a', 'b', ' ', '?', 'b', 'b'};
+		double[] input_array8 = {-0.5, -0.21, -0.7, -0.2, -16, 0.4, 0.5, 0};
+
 		System.out.println("Two positive numbers: " + tasks.two_positive_numbers(input_array2));
 		tasks.count_and_product(input_array3);
 
@@ -63,5 +67,12 @@ public class Main {
 		tasks.task008(input_array2);
 		tasks.task009(input_array4);
 		tasks.task010(input_array4);
+		tasks.task011(input_array6);
+		tasks.task012(input_array6);
+		tasks.task013(input_array7);
+		tasks.task014(input_array7);
+		tasks.task015(input_array6);
+		tasks.task016(input_array8);
+		tasks.task017(input_array2, 2, 9);
 	}
 }

@@ -281,7 +281,107 @@ public class tasks {
 		}
 	}
 
-	public static void task011(int input) {
+	public static void task011(int[] input) {
+		int[] second_array = new int[input.length / 2];
+		for (int i = 0; i < input.length / 2; i++) {
+			second_array[i] = input[i] + input[input.length - i - 1];
+		}
+		int max = second_array[0];
+		for (int i : second_array) {
+			if (i > max) {
+				max = i;
+			}
+		}
+		System.out.println(max);
+	}
 
+	public static void task012(int[] input) {
+		int min = input[0];
+		int index = 0;
+		for (int i = 0; i < input.length; i++) {
+			if (input[i] < min) {
+				min = input[i];
+				index = i;
+			}
+		}
+		for (int i = 0; i < index; i++) {
+			input[i] = input[i] * min;
+		}
+		System.out.println("min " + min);
+		System.out.println("index " + index);
+		for (int i : input) {
+			System.out.println("test - " + i);
+		}
+	}
+
+	public static void task013(char[] input) {
+		int count = 0;
+		for (char i : input) {
+			if (i == 'K') {
+				count++;
+			}
+		}
+		System.out.println("count - " + count);
+	}
+
+	public static void task014(char[] input) {
+		int count_of_a = 0;
+		int count_of_b = 0;
+		for (int i : input) {
+			if (i == 'a') {
+				count_of_a++;
+			}
+			if (i == 'b') {
+				count_of_b++;
+			}
+		}
+		System.out.println(count_of_a > count_of_b);
+	}
+
+	public static void task015(int[] input) {
+		int[] second_array = new int[input.length / 2];
+		for (int i = 0; i < input.length / 2; i++) {
+			second_array[i] = input[i] * input[input.length - i -1];
+		}
+		int min = second_array[0];
+		for (int i : second_array) {
+			if (i < min) {
+				min = i;
+			}
+		}
+		System.out.println("min - " + min);
+	}
+
+	public static void task016(double[] input) {
+		double max = input[0];
+		for (double i : input) {
+			if (i > max) {
+				max = i;
+			}
+		}
+		System.out.println("max abs - " + Math.abs(max));
+		System.out.println(Math.abs(max) > 1);
+	}
+
+	public static void task017(int[] input, int a, int b) {
+		int min = input[a+1];
+		for (int i = a + 1 ; i < b; i++) {
+			if (input[i] < min) {
+				min = input[i];
+			}
+		}
+		System.out.println("Interval min - " + min);
+
+		for (int i : input) {
+			System.out.println("First array - " + i);
+		}
+
+		for (int i = a + 1 ; i < b; i++) {
+			 input[i] = min;
+		}
+
+		for (int i : input) {
+			System.out.println("Second array - " + i);
+		}
 	}
 }

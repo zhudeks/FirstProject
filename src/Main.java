@@ -4,12 +4,14 @@ import java.util.zip.ZipFile;
 
 public class Main {
 	public static void main(String[] args) {
-		//Read input from keyboard
-//		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-//		System.out.print("Enter age: ");
-//
-//		int num = myObj.nextInt();  // Read user input
-//		System.out.println("Factorial of " + num + " is " + fact(num));  // Output user input
+		/*
+		Read input from keyboard
+		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+		System.out.print("Enter age: ");
+
+		int num = myObj.nextInt();  // Read user input
+		System.out.println("Factorial of " + num + " is " + fact(num));  // Output user input
+		*/
 
 		int num = 6;
 		//Area calculation
@@ -54,11 +56,13 @@ public class Main {
 		int[] input_array2 = {4, 1, 1, 2, -5, 0, 9, -1, 65, -10};
 		int[] input_array3 = {-4, -5};
 		int[] input_array4 = {4, 1, 1, 2, 9, 0, -5};
+		double[] input_array5 = {-2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		System.out.println("Two positive numbers: " + two_positive_numbers(input_array2));
 		count_and_product(input_array3);
 
 		task003(input_array2);
 		task004(input_array4);
+		task005(input_array5);
 	}
 
 	public static int fact(int n) {
@@ -283,8 +287,20 @@ public class Main {
 	}
 
 	public static void task005(double[] temp){
-		double min;
-		double max;
+		double min = temp[0];
+		double max = temp[0];
+		double count = 0;
 		double median;
+		for (int i = 0; i < 23; i++) {
+			if (temp[i] > max) {
+				max = temp[i];
+			} else if (temp[i] < min) {
+				min = temp[i];
+			}
+			count = count + temp[i];
+		}
+		System.out.println("Min - " + min);
+		System.out.println("Max - " + max);
+		System.out.println("Median - " + count / 24 );
 	}
 }

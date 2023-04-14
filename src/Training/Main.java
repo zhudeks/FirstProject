@@ -45,12 +45,12 @@ public class Main {
 		tasks.second_largest_element(input_array);
 
 		System.out.println("circle - " +  tasks.area(4));
-		System.out.println("trinagle - " +  tasks.area(2, 1, 3));
+		System.out.println("triangle - " +  tasks.area(2, 1, 3));
 		System.out.println("rectangle - " + tasks.area(4, 5));
 
-		int[] input_array2 = {4, 1, 1, 2, -5, 0, 9, -1, 65, -10};
+		int[] input_array2 = {4, 1, 1, 2, -5, 0, 9, 2, -1, 65, -10, -5, -1, 12, 3, -2};
 		int[] input_array3 = {-4, -5};
-		int[] input_array4 = {4, 1, 1, 2, 9, 0, -5};
+		int[] input_array4 = {3, -2, -1, 4, 0, 0, 2, 1, 1, 2, 9, 0, 7, 2};
 		double[] input_array5 = {-2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		System.out.println("Two positive numbers: " + tasks.two_positive_numbers(input_array2));
 		tasks.count_and_product(input_array3);
@@ -61,11 +61,7 @@ public class Main {
 		tasks.task006(input_array2);
 		tasks.task007(input_array2);
 		tasks.task008(input_array2);
-
-
+		tasks.task009(input_array4);
+		tasks.task010(input_array4);
 	}
-
-
-
-
 }

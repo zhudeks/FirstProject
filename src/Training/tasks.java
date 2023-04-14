@@ -1,21 +1,6 @@
 package Training;
 
 public class tasks {
-	public static void task008(int[] input_arr) {
-		int count = 0;
-		int product = 1;
-		for (int i : input_arr) {
-			if (i < 0) {
-				count++;
-			}
-			if (i >= 5 && i <= 15) {
-				product *= i;
-			}
-		}
-		System.out.println("Count - " + count);
-		System.out.println("Product - " + product);
-	}
-
 	public static int fact(int n) {
 		int f = 1;
 		if (n > 1) {
@@ -256,5 +241,47 @@ public class tasks {
 		}
 		System.out.println("Count - " + count);
 		System.out.println("Sum - " + sum);
+	}
+
+	public static void task008(int[] input_arr) {
+		int count = 0;
+		int product = 1;
+		for (int i : input_arr) {
+			if (i < 0) {
+				count++;
+			}
+			if (i >= 5 && i <= 15) {
+				product *= i;
+			}
+		}
+		System.out.println("Count - " + count);
+		System.out.println("Product - " + product);
+	}
+
+	public static void task009(int[] input_arr) {
+		int count = 0;
+		for (int i = 0; i < input_arr.length - 1; i++) {
+			if (input_arr[i] <= 3 && input_arr[i+1] < 0) {
+				System.out.println("a[" + i + "] - " + input_arr[i]);
+				System.out.println("a[" + (i + 1) + "] - " + input_arr[i+1]);
+				count++;
+			}
+		}
+		if (count == 0) {
+			System.out.println("Նման զույգ չկա");
+		}
+	}
+
+	public static void task010(int[] input) {
+		for (int i = 0; i < input.length; i++) {
+			if (input[i] == 0 && input[i+1] % 2 == 0 && input[i+1] > 0) {
+				System.out.println("a[" + i + "] - " + input[i]);
+				System.out.println("a[" + (i + 1) + "] - " + input[i+1]);
+			}
+		}
+	}
+
+	public static void task011(int input) {
+
 	}
 }

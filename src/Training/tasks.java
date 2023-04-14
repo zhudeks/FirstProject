@@ -1,80 +1,29 @@
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.zip.ZipFile;
+package Training;
 
-public class Main {
-	public static void main(String[] args) {
-		/*
-		Read input from keyboard
-		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-		System.out.print("Enter age: ");
-
-		int num = myObj.nextInt();  // Read user input
-		System.out.println("Factorial of " + num + " is " + fact(num));  // Output user input
-		*/
-
-		int num = 6;
-		//Area calculation
-		double area = area("circle", 5, 7);
-		if (area != 0) {
-			System.out.println("Area is " + area);
-		} else {
-			System.out.println("It is not possible to calculate area");
+public class tasks {
+	public static void task008(int[] input_arr) {
+		int count = 0;
+		int product = 1;
+		for (int i : input_arr) {
+			if (i < 0) {
+				count++;
+			}
+			if (i >= 5 && i <= 15) {
+				product *= i;
+			}
 		}
-		int[] input_array = {3, 3, 1, 1, 1, 1, 2};
-		//Sort function
-		sort(input_array);
-
-		//Age check
-		print_age(num);
-
-		//Age check 2
-		System.out.println(print_age1(num));
-
-		//String to array
-		string_to_array("sdsd fgfgg ioio");
-
-		//fd
-		String s = "fddj uui oppoio+ 54";
-		System.out.println(Arrays.toString(sentence_to_array(s)));
-
-		//string concat
-		String str1 = "hello";
-		String str2 = "world";
-		String str3 = str1 + str2;
-		System.out.println(str3);
-
-		int[] input_array1 = {3, 1};
-
-		reverse(input_array1);
-		second_largest_element(input_array);
-
-		System.out.println("circle - " +  area(4));
-		System.out.println("trinagle - " +  area(2, 1, 3));
-		System.out.println("rectangle - " + area(4, 5));
-
-		int[] input_array2 = {4, 1, 1, 2, -5, 0, 9, -1, 65, -10};
-		int[] input_array3 = {-4, -5};
-		int[] input_array4 = {4, 1, 1, 2, 9, 0, -5};
-		double[] input_array5 = {-2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		System.out.println("Two positive numbers: " + two_positive_numbers(input_array2));
-		count_and_product(input_array3);
-
-		task003(input_array2);
-		task004(input_array4);
-		task005(input_array5);
+		System.out.println("Count - " + count);
+		System.out.println("Product - " + product);
 	}
 
 	public static int fact(int n) {
 		int f = 1;
-		if (n <= 1) {
-			return f;
-		} else {
+		if (n > 1) {
 			for (int i = 1; i <= n; i++) {
 				f = f * i;
 			}
-			return f;
 		}
+		return f;
 	}
 
 	public static double area(String figure, double... sides) {
@@ -108,18 +57,18 @@ public class Main {
 	public static void sort(int[] a1) {
 		for (int i = 0; i<a1.length - 1; i++)
 			for(int j = i; j<a1.length; j++)
+			{
+				int min;
+				if(a1[i]< a1[j])
 				{
-					int min;
-					if(a1[i]< a1[j])
-					{
-						min = a1[i];
-						a1[i] = a1[j];
-						a1[j] = min;
-					}
+					min = a1[i];
+					a1[i] = a1[j];
+					a1[j] = min;
 				}
+			}
 
-		for (int i = 0; i < a1.length; i++) {
-			System.out.println("a1 and b1 are:" + a1[i]);
+		for (int j : a1) {
+			System.out.println("a1 and b1 are:" + j);
 		}
 	}
 
@@ -159,22 +108,8 @@ public class Main {
 		}
 	}
 
-	public static String[] sentence_to_array(String str) {
-		String[] new_str_arr = new String[str.length()];
-		for (int i = 0; i < str.length(); i++) {
-			for (int j = 0; j < str.length(); j++) {
-				char elem = str.charAt(i);
-				if (elem != ' ') {
-					new_str_arr[i] = String.valueOf(elem);
-				}
-			}
-		}
-
-		return new_str_arr;
-	}
-
 	public static void reverse(int[] input_arr) {
-		int new_arr[] = new int[input_arr.length];
+		int[] new_arr = new int[input_arr.length];
 		int index = 0;
 		for (int i = input_arr.length -1; i >= 0; i--) {
 
@@ -182,8 +117,8 @@ public class Main {
 			index ++;
 		}
 		System.out.println("Reversed ------ ");
-		for (int i = 0; i < new_arr.length; i++) {
-			System.out.println(new_arr[i]);
+		for (int j : new_arr) {
+			System.out.println(j);
 		}
 	}
 
@@ -199,11 +134,11 @@ public class Main {
 			second_largest = input_arr[1];
 		}
 
-		for (int i = 0; i < input_arr.length; i++) {
-			if (input_arr[i] >= largest) {
-				largest = input_arr[i];
-			} else if (input_arr[i] <= largest && input_arr[i] >= second_largest) {
-				second_largest = input_arr[i];
+		for (int j : input_arr) {
+			if (j >= largest) {
+				largest = j;
+			} else if (j >= second_largest) {
+				second_largest = j;
 			}
 		}
 		System.out.println("Largest - " + largest);
@@ -241,12 +176,12 @@ public class Main {
 	public static void count_and_product(int[] input_arr){
 		int count = 0;
 		int product = 1;
-		for (int i = 0; i < input_arr.length; i++) {
-			if (input_arr[i] > 0) {
-				count = count + input_arr[i];
+		for (int j : input_arr) {
+			if (j > 0) {
+				count = count + j;
 			}
-			if (input_arr[i] % 2 == 0 && input_arr[i] > 0) {
-				product = product * input_arr[i];
+			if (j % 2 == 0 && j > 0) {
+				product = product * j;
 			}
 		}
 		System.out.println("Count - " + count);
@@ -255,11 +190,9 @@ public class Main {
 
 	//task 003
 	public static void task003(int[] input_arr) {
-		boolean flag = false;
-		for (int i = 0; i < input_arr.length; i++) {
-			if (input_arr[i] < -2) {
-				flag = true;
-				break;
+		for (int j : input_arr) {
+			if (j < -2) {
+				return;
 			}
 		}
 		for (int i = 0; i < input_arr.length; i++) {
@@ -272,25 +205,24 @@ public class Main {
 		}
 	}
 
-	public static void task004(int[] input_arr){
+	public static void task004(int[] input_arr) {
 		int count_even = 0;
 		int count_odd = 0;
-		for (int i = 0; i < input_arr.length; i++) {
-			if (input_arr[i] > 0 && input_arr[i] % 2 == 0) {
-				count_even = count_even + input_arr[i] * input_arr[i];
-			} else if (input_arr[i] > 0 && input_arr[i] % 2 == 1) {
-				count_odd = count_odd + input_arr[i] * input_arr[i];
+		for (int j : input_arr) {
+			if (j > 0 && j % 2 == 0) {
+				count_even = count_even + j * j;
+			} else if (j % 2 == 1) {
+				count_odd = count_odd + j * j;
 			}
 		}
 		System.out.println("Zuyg - " + count_even);
 		System.out.println("Kent - " + count_odd);
 	}
 
-	public static void task005(double[] temp){
+	public static void task005(double[] temp) {
 		double min = temp[0];
 		double max = temp[0];
 		double count = 0;
-		double median;
 		for (int i = 0; i < 23; i++) {
 			if (temp[i] > max) {
 				max = temp[i];
@@ -302,5 +234,27 @@ public class Main {
 		System.out.println("Min - " + min);
 		System.out.println("Max - " + max);
 		System.out.println("Median - " + count / 24 );
+	}
+
+	public static void task006(int[] input_arr) {
+		for (int i = 0; i < input_arr.length; i++) {
+			if (input_arr[i] % 2 == -1) {
+				System.out.println("input_array[" + i + "]: " + input_arr[i]);
+				return;
+			}
+		}
+	}
+
+	public static void task007(int[] input_arr) {
+		int count = 0;
+		int sum = 0;
+		for (int j : input_arr) {
+			if (j % 5 == 0 && j % 7 != 0) {
+				count++;
+				sum += j;
+			}
+		}
+		System.out.println("Count - " + count);
+		System.out.println("Sum - " + sum);
 	}
 }

@@ -384,4 +384,140 @@ public class tasks {
 			System.out.println("Second array - " + i);
 		}
 	}
+
+	public static void task018(int[] input) {
+		int index = 0;
+		for (int i = 0; i < input.length; i++) {
+			if (input[i] > 100) {
+				index = i;
+				break;
+			}
+		}
+
+		System.out.println("i = " + index);
+
+		for (int i : input) {
+			System.out.println("Test first array - " + i);
+		}
+
+		for (int i = index; i < input.length; i++) {
+			input[i] = input[i] / 100;
+		}
+
+		for (int i : input) {
+			System.out.println("Test second array - " + i);
+		}
+	}
+
+	public static void task019(int[] input) {
+		for (int i = 0; i < input.length - 1; i++) {
+			if (input[i] > 0 && input[i + 1] > 0 && input[i] * input[i + 1] % 10 == 0) {
+				System.out.println("test test");
+				System.out.println(i + " " + (i + 1));
+			}
+		}
+	}
+
+	public static void task020(int[] input) {
+		int[] new_array = new int[input.length / 2];
+		for (int i = 0; i < input.length / 2; i++) {
+			new_array[i] = input[i] + input[input.length - i - 1];
+		}
+
+		for (int i : new_array) {
+			System.out.println("test - " + i);
+		}
+	}
+
+	public static void task021(int[][] input, int a, int b) {
+		int count = 0;
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (input[i][j] >= a && input[i][j] <= b) {
+					System.out.println("input[" + i + "][" + j + "] = " + input[i][j]);
+					count++;
+				}
+			}
+		}
+		System.out.println("Count - " + count);
+	}
+
+	public static void task022(int[][] input) {
+		int count = 0;
+		int sum = 0;
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (j > i) {
+					count++;
+					sum += input[i][j];
+				}
+			}
+		}
+		System.out.println("Count - " + count);
+		System.out.println("Sum - " + sum);
+	}
+
+	public static void task023(int[][] input) {
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				System.out.print(input[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (i > j && input[i][j] < 0) {
+					input[i][j] = 0;
+				}
+			}
+		}
+
+		System.out.println("after");
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				System.out.print(input[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+	}
+
+	public static void task024(int[][] input, int p) {
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				System.out.print(input[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (j < input[i].length - i - 1) {
+					input[i][j] = p;
+				}
+			}
+		}
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				System.out.print(input[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+	}
+
+	public static void task025(int[][] input) {
+		int max = input[0][0];
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (input[i][j] > max) {
+					max = input[i][j];
+				}
+			}
+		}
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (input[i][j] == max) {
+					System.out.println("i = " + i + " , " + "j = " + j);
+				}
+			}
+		}
+	}
 }

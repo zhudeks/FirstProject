@@ -520,4 +520,72 @@ public class tasks {
 			}
 		}
 	}
+
+	public static void task026(int[][] input) {
+		int min = input[0][0];
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (input[i][j] < min) {
+					min = input[i][j];
+				}
+			}
+		}
+
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				System.out.print(input[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (input[i][j] > 0) {
+					input[i][j] = min;
+				}
+			}
+		}
+
+		System.out.println("test test");
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				System.out.print(input[i][j] + " ");
+			}
+			System.out.println(" ");
+		}
+	}
+
+	public static void task027(int[][] input) {
+		int max_abs = 0;
+		for (int[] ints : input) {
+			for (int anInt : ints) {
+				if (Math.abs(anInt) > max_abs) {
+					max_abs = Math.abs(anInt);
+				}
+			}
+		}
+		System.out.println(max_abs);
+
+		for (int[] i : input) {
+			for (int j : i) {
+				System.out.print(j + " ");
+			}
+			System.out.println(" ");
+		}
+
+		for (int[] i : input) {
+			for (int j : i) {
+				if (j < 0) {
+					j = max_abs;
+				}
+			}
+		}
+
+		for (int[] i : input) {
+		    for (int j : i) {
+			    System.out.print(j + " ");
+		    }
+			System.out.println(" ");
+		}
+	}
 }

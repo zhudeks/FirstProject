@@ -25,7 +25,7 @@ public class Main {
 								{8, -5, 12, 100},
 								{2, 100, -9, 100}};
 
-		tasks.task027(input_array9);
+		Tasks.task027(input_array9);
 
 	}
 }

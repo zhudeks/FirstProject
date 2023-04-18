@@ -1,6 +1,7 @@
 package Training;
 
-public class tasks {
+//change name
+public class Tasks {
 	public static int fact(int n) {
 		int f = 1;
 		if (n > 1) {

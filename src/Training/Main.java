@@ -20,12 +20,14 @@ public class Main {
 		int[] input_array6 = {-3, -2, 17, 2, 5, 36, 4, 5, 0};
 		char[] input_array7 = {'l','+', 'o', ';', 'K', '7', 'a', 'f', '/', 'a', 'b', ' ', '?', 'b', 'b'};
 		double[] input_array8 = {-0.5, -0.21, -0.7, -0.2, -16, 0.4, 0.5, 0};
-		int[][] input_array9 = {{-104, 3, -3, 0},
+		int[][] input_array9 = {{-104, 3, -3, 1},
 								{0, 1, 3, 0},
 								{8, -5, 12, 100},
-								{2, 100, -9, 100}};
+								{3, 100, -9, 100}};
 
-		Tasks.task027(input_array9);
+		Tasks.task028(input_array9);
 		//First commit on dev
+
+
 	}
 }

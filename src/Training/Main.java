@@ -11,5 +11,7 @@ public class Main {
 
 		double volume = myBox.width * myBox.height * myBox.depth;
 		System.out.println("Volume = " + volume);
+
+		//only for dev
 	}
 }

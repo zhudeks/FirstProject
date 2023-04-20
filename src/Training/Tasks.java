@@ -589,4 +589,21 @@ public class Tasks {
 			System.out.println(" ");
 		}
 	}
+
+	public static void task028(int[][] input) {
+		int count_general = 0;
+		int count_second = 0;
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (i == j && input[i][j] % 2 == 0) {
+					count_general++;
+				}
+				if (i == input[i].length - j - 1 && input[i][j] % 2 == 0) {
+					count_second++;
+				}
+			}
+		}
+		System.out.println("gen - " + count_general);
+		System.out.println("sec - " + count_second);
+	}
 }

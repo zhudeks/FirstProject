@@ -548,9 +548,9 @@ public class Tasks {
 		}
 
 		System.out.println("test test");
-		for (int i = 0; i < input.length; i++) {
-			for (int j = 0; j < input[i].length; j++) {
-				System.out.print(input[i][j] + " ");
+		for (int[] ints : input) {
+			for (int j = 0; j < ints.length; j++) {
+				System.out.print(ints[j] + " ");
 			}
 			System.out.println(" ");
 		}

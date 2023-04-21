@@ -1,27 +1,27 @@
 package Training;
 
 public class Triangle {
-	double a;
-	double b;
-	double c;
+	double side1;
+	double side2;
+	double side3;
 
 	double area() {
 		double s = 0.0;
-		if (a > b + c || b > a + c || c > a + b) {
+		if (side1 > side2 + side3 || side2 > side1 + side3 || side3 > side1 + side2) {
 			System.out.println("It is not triangle------");
 		} else {
-			double p = (a + b + c) / 2;
-			s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+			double p = (side1 + side2 + side3) / 2;
+			s = Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
 		}
 		return s;
 	}
 
 	double perimeter() {
 		double p = 0.0;
-		if (a > b +c || b > a + c || c > a + b) {
+		if (side1 > side2 + side3 || side2 > side1 + side3 || side3 > side1 + side2) {
 			System.out.println("It is not triangle");
 		} else {
-			p = a + b + c;
+			p = side1 + side2 + side3;
 		}
 		return p;
 	}
